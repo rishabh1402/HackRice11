@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Profit Predictor</title>
+    <link rel="icon" href="../icon.png" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap');
         * {
             margin: 0;
             padding: 0;
             outline: none;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nova Oval', cursive;
+        }
+        
+        body {
+            margin: 2%;
         }
         
         .bg {
@@ -22,21 +28,23 @@
         
         .home {
             border: 3px solid black;
-            padding: 0.5%;
+            padding: 1.25%;
             background-color: rgb(248, 170, 24);
         }
         
         .container {
             position: relative;
             margin: auto;
-            margin-top: 10%;
-            margin-bottom: 10%;
+            margin-top: 5%;
+            margin-bottom: 3%;
+            margin-left: 25%;
             min-height: 70vh;
             justify-content: center;
-            background: #fff;
+            background: rgba(155, 106, 15, 0.932);
             width: 800px;
             padding: 25px 40px 10px 40px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
         }
         
         .container .text {
@@ -79,9 +87,10 @@
         .textarea textarea:focus~label,
         .datain input:valid~label,
         .textarea textarea:valid~label {
-            transform: translateY(-20px);
-            font-size: 14px;
-            color: #3498db;
+            transform: translateY(-40px);
+            font-size: 20px;
+            font-style: bold;
+            color: #155e8e;
         }
         
         .datain label {
@@ -104,7 +113,7 @@
             content: "";
             height: 2px;
             width: 100%;
-            background: #3498db;
+            background: #165d8c;
             transform: scaleX(0);
             transform-origin: center;
             transition: transform 0.3s ease;
@@ -149,16 +158,24 @@
             z-index: 2;
         }
     </style>
+    <script>
+        function checkEvt() {
+            var evTypep = window.performance.getEntriesByType("navigation")[0].type;
+            if (evTypep == 'reload') {
+                window.location.replace("index.html");
+            }
+        }
+        checkEvt();
+    </script>
 
 </head>
 
-<body>
+<body background="bg.jpg">
     <!-- Main Input For Receiving Query to our ML -->
-    <a href="https://reaper-dhan.github.io/HackRice11/" ><button class="home">Home 🏠</button></a>
-    <br>
+    <a href="../welcome.html"><button class="home">Home 🏠</button></a>
     <div class="container">
         <div class="text">
-            Please give in your inputs
+            <br> Please give your inputs
         </div>
         <br>
         <br>
@@ -167,12 +184,12 @@
                 <div class="datain">
                     <input type="text" name="quantity" required="required" />
                     <div class="underline"></div>
-                    <label for="">Quantity</label>
+                    <label for="">&ensp;Quantity</label>
                 </div>
                 <div class="datain">
                     <input type="text" name="category" required="required" />
                     <div class="underline"></div>
-                    <label for="">Category</label>
+                    <label for="">&ensp;Category</label>
                 </div>
             </div>
             <br>
